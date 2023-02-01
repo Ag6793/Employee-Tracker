@@ -1,7 +1,38 @@
 const inquirer = require('inquirer');
 const prompts = require('./src/prompts');
 
-
+const menu = () => {
+    inquirer
+        .prompt(prompts.startPrompt)
+        .then(function ({ menuAction }) {
+            switch (menuAction) {
+                case 'View all departments':
+                    console.log('View all departments')
+                    break;
+                case 'View all roles':
+                    console.log('View all roles')
+                    break;
+                case 'View all employees':
+                    console.log('View all employees')
+                    break;
+                case 'Add a department':
+                    console.log('Add a department')
+                    break;
+                case 'Add a role':
+                    console.log('Add a role')
+                    break;
+                case 'Add an employee':
+                    console.log('Add an employee')
+                    break;
+                case 'Update an employee role':
+                    console.log('Update employee')
+                    break;
+                default:
+                    console.log('default')
+                    break;
+            }
+        })
+}
 
 // When you select view all departments, you will be presented with a table shoqing department names
 //and department ids

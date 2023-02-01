@@ -1,10 +1,10 @@
-const questions = {
+const prompts= {
 startPrompt: [
     {
         type: 'list',
         name: 'menuAction',
         message: "What would you like to do?",
-        choices: ["view all departments, viewl all roles, view all employees, add a department, add a role, add an employee, update an employee role"]
+        choices: ["View all departments, View all roles, View all employees, Add a department, Add a role, Add an employee, Update an employee role"]
     }
 ],
 departmentPrompt: [
