@@ -1,9 +1,9 @@
 const inquirer = require('inquirer');
-const prompts = require('./src/prompts');
+const questions = require('./src/questions.js');
 
 const menu = () => {
     inquirer
-        .prompt(prompts.startPrompt)
+        .prompt(questions.startPrompt)
         .then(function ({ menuAction }) {
             switch (menuAction) {
                 case 'View all departments':

@@ -1,4 +1,4 @@
-const prompts= {
+const questions= {
 startPrompt: [
     {
         type: 'list',
