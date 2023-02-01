@@ -34,6 +34,8 @@ const menu = () => {
         })
 }
 
+menu();
+
 // When you select view all departments, you will be presented with a table shoqing department names
 //and department ids
 
