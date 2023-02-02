@@ -67,7 +67,27 @@ async function addDepartment() {
     menu();
 }
 
+async function addRole() {
+    let [departments] = await Database.vDepartments();
+    let allDepartments = departments.map(({id, department_name}) => ({
+        name: department_name,
+        value: id
+    }));
 
+    let department_list = {
+        type: 'list',
+        name: 'department_id',
+        message: "What is the department for the role?", 
+        choices: allDepartments
+    }
+
+    questions.rolePrompt.push(department_list)
+
+    let addR = await inquirer.prompt(questions.rolePrompt);
+    console.log(addR)
+    // await Database.aRole(addR);
+    menu();
+}
 
 
 

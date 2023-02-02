@@ -25,11 +25,6 @@ rolePrompt: [
         name: 'salary',
         message: "What is the salary for the role?"
     },
-    {
-        type: 'input',
-        name: 'department',
-        message: "What is the department for the role?"
-    }
 ],
 employeePrompt: [
     {
