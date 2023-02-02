@@ -29,23 +29,19 @@ rolePrompt: [
 employeePrompt: [
     {
         type: 'input',
-        name: 'firstname',
+        name: 'first_name',
         message: "What is the employee's firstname?"
     },
     {
         type: 'input',
-        name: 'lastname',
+        name: 'last_name',
         message: "What is the employee's lastname?"
     },
+    
     {
         type: 'input',
-        name: 'role',
-        message: "What is the employee's role?"
-    },
-    {
-        type: 'input',
-        name: 'manager',
-        message: "Who is the employee's manager?"
+        name: 'manager_id',
+        message: "What is the employee's manager id?"
     },
 ],
 };

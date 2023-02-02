@@ -25,7 +25,7 @@ const menu = () => {
                     addRole();
                     break;
                 case 'Add an employee':
-                    console.log('Add an employee')
+                    addEmployee();
                     break;
                 case 'Update an employee role':
                     console.log('Update employee')
@@ -44,7 +44,7 @@ async function viewDepartments() {
     console.log('\n');
     console.table(viewD);
     menu();
- 
+
 };
 
 async function viewRoles() {
@@ -69,7 +69,7 @@ async function addDepartment() {
 
 async function addRole() {
     let [departments] = await Database.vDepartments();
-    let allDepartments = departments.map(({id, department_name}) => ({
+    let allDepartments = departments.map(({ id, department_name }) => ({
         name: department_name,
         value: id
     }));
@@ -77,18 +77,34 @@ async function addRole() {
     let department_list = {
         type: 'list',
         name: 'department_id',
-        message: "What is the department for the role?", 
+        message: "What is the department for the role?",
         choices: allDepartments
     }
-
     questions.rolePrompt.push(department_list)
-
     let addR = await inquirer.prompt(questions.rolePrompt);
     console.log(addR)
     await Database.aRole(addR);
     menu();
 }
 
+async function addEmployee() {
+    let [roles] = await Database.vRoles();
+    let allRoles = roles.map(({ id, role_title }) => ({
+        name: role_title,
+        value: id
+    }));
+    let role_list = {
+        type: 'list',
+        name: 'role_id',
+        message: "What is the employee's role?",
+        choices: allRoles
+    }
+    questions.employeePrompt.push(role_list)
+    let addE = await inquirer.prompt(questions.employeePrompt);
+    console.log(addE)
+    await Database.aEmployee(addE);
+    menu();
+}
 
 
 function quit() {

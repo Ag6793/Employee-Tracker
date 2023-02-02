@@ -34,6 +34,12 @@ class Database {
             'INSERT INTO role SET ?', data
         );
     }
+
+    aEmployee(data) {
+        return this.connection.promise().query(
+            'INSERT INTO employee SET ?', data
+        );
+    }
 }
 
 module.exports = new Database(connection);
