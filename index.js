@@ -37,8 +37,8 @@ const menu = () => {
 }
 
 async function viewDepartments() {
-    let bob = await Database.vDepartments();
-    console.log(bob)
+    let viewD = await Database.vDepartments();
+    console.log(viewD[0]);
  
 };
 
