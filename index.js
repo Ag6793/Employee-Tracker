@@ -13,7 +13,8 @@ const menu = () => {
                     menu();
                     break;
                 case 'View all roles':
-                    console.log('View all roles')
+                    viewRoles()
+                    menu();
                     break;
                 case 'View all employees':
                     console.log('View all employees')
@@ -40,15 +41,24 @@ const menu = () => {
 }
 
 async function viewDepartments() {
-    let viewD = await Database.vDepartments();
-    console.log(viewD[0]);
+    let [viewD] = await Database.vDepartments();
+    console.log('\n');
+    console.table(viewD);
  
 };
+
+async function viewRoles() {
+    let [viewR] = await Database.vRoles();
+    console.log('\n');
+    console.table(viewR)
+}
 
 function quit() {
     console.log('Bye');
     process.exit();
 }
+
+
 
 
 
