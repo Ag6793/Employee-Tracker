@@ -10,6 +10,7 @@ Url to walkthrough video: https://drive.google.com/file/d/1KGVP2tB9Bij_SK3H6gLWD
 * MySQL
 * Express
 * Inquirer
+* Node.js
 
 ## Installation
 * Run npm install
