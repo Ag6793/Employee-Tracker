@@ -40,6 +40,7 @@ class Database {
             'INSERT INTO employee SET ?', data
         );
     }
+
 }
 
 module.exports = new Database(connection);

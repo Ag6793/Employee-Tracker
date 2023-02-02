@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const questions = require('./src/questions.js');
-const cTable = require('console.table');
+// const cTable = require('console.table');
 const Database = require('./db/query.js');
 
 const menu = () => {
@@ -28,7 +28,8 @@ const menu = () => {
                     addEmployee();
                     break;
                 case 'Update an employee role':
-                    console.log('Update employee')
+                    // updateEmployee();
+                    console.log('Update employee role');
                     break;
                 case 'Quit':
                     quit();
@@ -105,6 +106,34 @@ async function addEmployee() {
     await Database.aEmployee(addE);
     menu();
 }
+
+// async function updateEmployee() {
+// let [employees] = await Database.vEmployees();
+// let allEmployees = employees.map(({ id, first_name, last_name }) =>({
+//     name: `${first_name} ${last_name}`,
+//     value: id
+// }));
+
+// let employee_list = {
+//     type: 'list',
+//     name: 'employee_id',
+//     message: 'Which employee would you like to update?',
+//     choices: allEmployees
+// }
+
+// let [roles] = await Database.vRoles();
+//     let allRoles = roles.map(({ id, role_title }) => ({
+//         name: role_title,
+//         value: id
+//     }));
+//     let role_list = {
+//         type: 'list',
+//         name: 'role_id',
+//         message: "What is the employee's new role?",
+//         choices: allRoles
+//     }
+
+// }
 
 
 function quit() {

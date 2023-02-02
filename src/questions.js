@@ -47,4 +47,3 @@ employeePrompt: [
 };
 
 module.exports = questions
-// update employees information?
