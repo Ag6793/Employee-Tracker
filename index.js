@@ -9,15 +9,16 @@ const menu = () => {
         .then(function ({ menuAction }) {
             switch (menuAction) {
                 case 'View all departments':
-                    viewDepartments()
+                    viewDepartments();
                     menu();
                     break;
                 case 'View all roles':
-                    viewRoles()
+                    viewRoles();
                     menu();
                     break;
                 case 'View all employees':
-                    console.log('View all employees')
+                    viewEmployees();
+                    menu();
                     break;
                 case 'Add a department':
                     console.log('Add a department')
@@ -50,7 +51,13 @@ async function viewDepartments() {
 async function viewRoles() {
     let [viewR] = await Database.vRoles();
     console.log('\n');
-    console.table(viewR)
+    console.table(viewR);
+}
+
+async function viewEmployees() {
+    let [viewE] = await Database.vEmployees();
+    console.log('\n');
+    console.table(viewE);
 }
 
 function quit() {
