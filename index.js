@@ -85,7 +85,7 @@ async function addRole() {
 
     let addR = await inquirer.prompt(questions.rolePrompt);
     console.log(addR)
-    // await Database.aRole(addR);
+    await Database.aRole(addR);
     menu();
 }
 

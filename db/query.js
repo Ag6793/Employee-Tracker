@@ -27,7 +27,12 @@ class Database {
         return this.connection.promise().query(
             'INSERT INTO department SET ?', data
         );
+    }
 
+    aRole(data) {
+        return this.connection.promise().query(
+            'INSERT INTO role SET ?', data
+        );
     }
 }
 
