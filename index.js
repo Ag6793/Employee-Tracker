@@ -1,5 +1,7 @@
 const inquirer = require('inquirer');
 const questions = require('./src/questions.js');
+const cTable = require('console.table');
+const Database = require('./db/query.js');
 
 const menu = () => {
     inquirer
@@ -7,7 +9,7 @@ const menu = () => {
         .then(function ({ menuAction }) {
             switch (menuAction) {
                 case 'View all departments':
-                    console.log('View all departments')
+                    viewDepartments()
                     break;
                 case 'View all roles':
                     console.log('View all roles')
@@ -33,6 +35,17 @@ const menu = () => {
             }
         })
 }
+
+async function viewDepartments() {
+    let bob = await Database.vDepartments();
+    console.log(bob)
+ 
+};
+
+
+
+
+
 
 menu();
 
