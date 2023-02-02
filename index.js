@@ -1,6 +1,5 @@
 const inquirer = require('inquirer');
 const questions = require('./src/questions.js');
-// const cTable = require('console.table');
 const Database = require('./db/query.js');
 
 const menu = () => {
