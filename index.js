@@ -10,6 +10,7 @@ const menu = () => {
             switch (menuAction) {
                 case 'View all departments':
                     viewDepartments()
+                    menu();
                     break;
                 case 'View all roles':
                     console.log('View all roles')
@@ -29,6 +30,8 @@ const menu = () => {
                 case 'Update an employee role':
                     console.log('Update employee')
                     break;
+                case 'Quit':
+                    quit();
                 default:
                     console.log('default')
                     break;
@@ -42,7 +45,10 @@ async function viewDepartments() {
  
 };
 
-
+function quit() {
+    console.log('Bye');
+    process.exit();
+}
 
 
 
