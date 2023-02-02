@@ -10,14 +10,14 @@ startPrompt: [
 departmentPrompt: [
     {
         type: 'input',
-        name: 'name',
+        name: 'department_name',
         message: "What is the department's name?"
     }
 ],
 rolePrompt: [
     {
         type: 'input',
-        name: 'roletitle',
+        name: 'role_title',
         message: "What is the title for the role?"
     },
     {

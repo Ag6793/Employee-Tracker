@@ -4,27 +4,25 @@ const cTable = require('console.table');
 const Database = require('./db/query.js');
 
 const menu = () => {
+    console.log('\n');
     inquirer
         .prompt(questions.startPrompt)
         .then(function ({ menuAction }) {
             switch (menuAction) {
                 case 'View all departments':
                     viewDepartments();
-                    menu();
                     break;
                 case 'View all roles':
                     viewRoles();
-                    menu();
                     break;
                 case 'View all employees':
                     viewEmployees();
-                    menu();
                     break;
                 case 'Add a department':
-                    console.log('Add a department')
+                    addDepartment();
                     break;
                 case 'Add a role':
-                    console.log('Add a role')
+                    addRole();
                     break;
                 case 'Add an employee':
                     console.log('Add an employee')
@@ -45,6 +43,7 @@ async function viewDepartments() {
     let [viewD] = await Database.vDepartments();
     console.log('\n');
     console.table(viewD);
+    menu();
  
 };
 
@@ -52,13 +51,25 @@ async function viewRoles() {
     let [viewR] = await Database.vRoles();
     console.log('\n');
     console.table(viewR);
+    menu();
 }
 
 async function viewEmployees() {
     let [viewE] = await Database.vEmployees();
     console.log('\n');
     console.table(viewE);
+    menu();
 }
+
+async function addDepartment() {
+    let addD = await inquirer.prompt(questions.departmentPrompt);
+    await Database.aDepartment(addD);
+    menu();
+}
+
+
+
+
 
 function quit() {
     console.log('Bye');
